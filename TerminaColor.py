@@ -27,12 +27,13 @@ class terminalColor(object):
         str = '\033[%d;%d;%dm' % (int(self.displayModel), int(self.fontColorDict[self.fontColor]),int(self.backgroundColorDict[self.backgroundColor]))
         print str
     def end(self):
-        print '\033[1;31;40m'
+        print '\033[0m'
 
 
 a = terminalColor()
 a.fontColor = greenColor
 a.backgroundColor = blackColor
+a.displayModel = unSeeModel
 a.start()
 print '*' * 10
 print "hello world"
